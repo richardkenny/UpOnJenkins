@@ -81,7 +81,10 @@ fi
 if [ "$ENVIRONMENT" == "release" ]; then
 # Load the UpOnJenkins apk
 /android-sdk-macosx/platform-tools/adb uninstall -r com.example.uponjenkins
-/android-sdk-macosx/platform-tools/adb install -r UpOnJenkins/bin/MainActivity-release-unsigned.apk
+jarsigner -verify -verbose -certs UpOnJenkins/bin/MainActivity-release-unsigned.apk
+/android-sdk-macosx/tools/zipalign -v 4 UpOnJenkins/bin/MainActivity-release-unsigned.apk UpOnJenkins/bin/mainActivity.apk
+
+/android-sdk-macosx/platform-tools/adb install -r UpOnJenkins/bin/mainActivity.apk
 # load the Visit Tracking Robotium Test Application apk
 #/android-sdk-macosx/platform-tools/adb install -r ProjectNameTests/bin/ProjectNameTests-release-unsigned.apk
 fi
