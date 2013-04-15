@@ -39,7 +39,7 @@ cd UpOnJenkins
 sed -e 's/android:versionCode="1" android:versionName="1.0"/android:versionCode="'${BUILD_NUMBER}'" android:versionName="'${BUILD_NUMBER}'"/g' AndroidManifest.xml > manifest.tmp && mv manifest.tmp AndroidManifest.xml
 
 # clean the target
-ant clean
+#ant clean
 
 # Execute the build (debug or release... as a jenkins parameter
 ant ${ENVIRONMENT}
