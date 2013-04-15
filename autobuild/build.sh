@@ -52,7 +52,9 @@ ant ${ENVIRONMENT}
 # Go back a directory
 cd ..
 ls UpOnJenkins/bin
-mv UpOnJenkins/bin/UpOnJenkins-${ENVIRONMENT}.apk UpOnJenkins.apk
+#
+#mv UpOnJenkins/bin/UpOnJenkins-${ENVIRONMENT}.apk UpOnJenkins.apk
+#mv UpOnJenkins/bin/MainActivity-release-unsigned.apk UpOnJenkins.apk
 
 ##############################################
 #Add to build the test project
@@ -78,7 +80,7 @@ fi
 
 if [ "$ENVIRONMENT" == "release" ]; then
 # Load the UpOnJenkins apk
-/android-sdk-macosx/platform-tools/adb install -r ProjectName/bin/UpOnJenkins-debug.apk
+/android-sdk-macosx/platform-tools/adb install -r ProjectName/bin/MainActivity-release-unsigned.apk
 # load the Visit Tracking Robotium Test Application apk
 #/android-sdk-macosx/platform-tools/adb install -r ProjectNameTests/bin/ProjectNameTests-release-unsigned.apk
 fi
