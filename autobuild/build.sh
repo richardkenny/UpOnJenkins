@@ -80,7 +80,7 @@ fi
 
 if [ "$ENVIRONMENT" == "release" ]; then
 # Load the UpOnJenkins apk
-/android-sdk-macosx/platform-tools/adb install -r ProjectName/bin/MainActivity-release-unsigned.apk
+/android-sdk-macosx/platform-tools/adb install -r UpOnJenkins/bin/MainActivity-release-unsigned.apk
 # load the Visit Tracking Robotium Test Application apk
 #/android-sdk-macosx/platform-tools/adb install -r ProjectNameTests/bin/ProjectNameTests-release-unsigned.apk
 fi
@@ -93,6 +93,6 @@ fi
 #/android-sdk-macosx/platform-tools/adb pull /data/data/com.compuware.projectname/files/junit-report.xml $WORKSPACE/ProjectNameTests/reports/junit-report.xml 
 
 # kill the emulator - this doesn't work on windows
-#/android-sdk-macosx/platform-tools/adb -s emulator-5554 emu kill
+/android-sdk-macosx/platform-tools/adb -s emulator-5554 emu kill
 
 ## repeat for additional emulators
