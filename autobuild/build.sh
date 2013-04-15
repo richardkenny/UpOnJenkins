@@ -38,6 +38,10 @@ cd UpOnJenkins
 # Set the app version to be the build number
 sed -e 's/android:versionCode="1" android:versionName="1.0"/android:versionCode="'${BUILD_NUMBER}'" android:versionName="'${BUILD_NUMBER}'"/g' AndroidManifest.xml > manifest.tmp && mv manifest.tmp AndroidManifest.xml
 
+#What does this do?
+/android-sdk-macosx/tools/android --verbose update project --path .
+
+
 # clean the target
 ant clean
 
