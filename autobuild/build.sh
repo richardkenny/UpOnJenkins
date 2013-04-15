@@ -48,10 +48,10 @@ ant clean
 # Execute the build (debug or release... as a jenkins parameter
 ant ${ENVIRONMENT}
 
-echo "I'm currently in " 
-echo `pwd`
+
 # Go back a directory
 cd ..
+ls UpOnJenkins/bin
 mv UpOnJenkins/bin/UpOnJenkins-${ENVIRONMENT}.apk UpOnJenkins.apk
 
 ##############################################
