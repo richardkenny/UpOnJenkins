@@ -101,6 +101,6 @@ fi
 #/android-sdk-macosx/platform-tools/adb pull /data/data/com.compuware.projectname/files/junit-report.xml $WORKSPACE/ProjectNameTests/reports/junit-report.xml 
 
 # kill the emulator - this doesn't work on windows
-#/android-sdk-macosx/platform-tools/adb -s emulator-5554 emu kill
+
 
 ## repeat for additional emulators
