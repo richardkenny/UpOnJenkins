@@ -84,9 +84,9 @@ if [ "$ENVIRONMENT" == "release" ]; then
 ls -la autobuild/UpOnJenkins.keystore
 ls -la UpOnJenkins/bin/MainActivity-release-unsigned.apk
 jarsigner  -keypass password -storepass password -verbose -keystore autobuild/UpOnJenkins.keystore UpOnJenkins/bin/MainActivity-release-unsigned.apk mykey
-$ zipalign -v 4 UpOnJenkins/bin/MainActivity-release-unsigned.apk UpOnJenkins/bin/MainActivity-aligned.apk
+#zipalign -v 4 UpOnJenkins/bin/MainActivity-release-unsigned.apk UpOnJenkins/bin/MainActivity-aligned.apk
 
-#/android-sdk-macosx/tools/zipalign -v 4 UpOnJenkins/bin/MainActivity-release-unsigned.apk UpOnJenkins/bin/mainActivity.apk
+/android-sdk-macosx/tools/zipalign -v 4 UpOnJenkins/bin/MainActivity-release-unsigned.apk UpOnJenkins/bin/mainActivity.apk
 
 /android-sdk-macosx/platform-tools/adb install -r UpOnJenkins/bin/MainActivity-aligned.apk
 # load the Visit Tracking Robotium Test Application apk
