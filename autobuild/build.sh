@@ -81,7 +81,7 @@ fi
 if [ "$ENVIRONMENT" == "release" ]; then
 # Load the UpOnJenkins apk
 #/android-sdk-macosx/platform-tools/adb uninstall -r com.example.uponjenkins
-jarsigner -verbose -sigalg MD5withRSA -digestalg SHA1 -keystore autobuild/UpOnJenkins.keystore my_application.apk UpOnJenkins/bin/MainActivity-release-unsigned.apk -keypass password -storepass password
+echo password | jarsigner -verbose -sigalg MD5withRSA -digestalg SHA1 -keystore autobuild/UpOnJenkins.keystore my_application.apk UpOnJenkins/bin/MainActivity-release-unsigned.apk -keypass password -storepass password
 $ zipalign -v 4 UpOnJenkins/bin/MainActivity-release-unsigned.apk UpOnJenkins/bin/MainActivity-aligned.apk
 
 #/android-sdk-macosx/tools/zipalign -v 4 UpOnJenkins/bin/MainActivity-release-unsigned.apk UpOnJenkins/bin/mainActivity.apk
